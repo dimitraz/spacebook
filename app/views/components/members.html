@@ -1,0 +1,18 @@
+<div class="ui five cards container">
+	#{list items: users, as: 'user'}
+	<div class="card">
+		<div class="image">
+			<img src="/profile/getpicture/${user.id}" /> 
+		</div>
+		<div class="content">
+			<a href="/publicprofile/${user.id}"><h3><span class="${user.loggedIn}"> ${user.firstName} ${user.lastName}</span></h3></a> <br />
+			${user.statusText} 
+		</div>
+		<div class="ui bottom attached button">
+			<a href="/members/follow/${user.id}"><i class="add icon"></i>
+			Follow</a>
+		</div>
+	</div>
+		#{/list}
+</div> <!-- End Cards -->
+	

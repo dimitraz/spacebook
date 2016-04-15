@@ -1,0 +1,38 @@
+<div class="ui card">
+	<div class="image">
+		<img class="ui fluid image" src="/profile/getpicture/${user.id}">
+	</div>
+	<div class="content">
+		<strong>Email:</strong> ${user.email} <br />
+		<strong>Nationality:</strong> ${user.nationality} <br />
+		<strong>Age:</strong> ${user.age}
+	</div>
+</div>
+
+<div class="ui accordion">
+	<div class="title">
+		<i class="write icon"></i>
+		Change profile image
+	</div>
+	<div class="content">
+		<form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    
+			<input type="file" name="picture" /> 
+			<input type="submit" name="submit" value="upload" />
+		</form>
+	</div>
+</div>
+  
+<div class="ui accordion">
+	<div class="title">
+		<i class="write icon"></i>
+		Change cover image
+	</div>
+	<div class="content">
+	    <form action="/profile/uploadthumbnail/${user.id}" method="post" enctype="multipart/form-data">     
+	    	<div class="ui field">
+	        	<input type="file" name="picture">  </input> 
+	        	<input type="submit" name="submit" value="upload" />
+	     	</div>     
+	    </form>  
+	</div>           
+</div>

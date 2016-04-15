@@ -1,0 +1,11 @@
+body, ui.button, .ui.text.container, .ui.input, .ui.form, .ui.menu, h5  { font-family: Inconsolata, 'Helvetica Neue'; }
+h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { font-family: 'Helvetica Neue';}
+.ui.secondary.pointing.menu .item { padding: 1.5em; }
+.ui.container { padding-top: 2.5em; }
+.ui.menu { margin-bottom: 0; }
+.profile { margin-bottom: .25em; }
+.item { margin-bottom: 1.5em; }
+
+.true { color: #ff0; }
+
+.cover { width: 100%; height: 400px; overflow: hidden; }

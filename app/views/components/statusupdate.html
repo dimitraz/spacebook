@@ -1,0 +1,17 @@
+<section>
+	<h5>Current Status</h5>
+  	<div class="ui message">
+    	<p> ${user.statusText} </p>
+  	</div>
+</section>
+   
+<section class="ui form segment">
+	<form action="/profile/changestatus" method="POST">
+    	<div class="field">
+        	<textarea name="statusText"></textarea>
+      	</div>
+      	<button class="ui button teal submit labeled icon"><i class="icon edit"></i> Update </button>
+    </form>
+</section>
+
+

@@ -1,0 +1,76 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+	<nav class="ui secondary pointing menu">
+		<a class="ui active item" href="/home">Home</a>
+	 	<a class="ui item" href="/members">Members</a>
+	  	<a class="ui item" href="/profile">Profile</a>
+	  	<div class="right menu">
+	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
+	  	</div>
+	</nav>
+
+	<section class="ui left aligned container">
+		<h1>
+		 	Welcome, <a href="/profile">${user.firstName} ${user.lastName}</a>
+		</h1>
+		
+		<div class="ui divider"></div>
+	
+		<div class="ui two column grid container">
+	    <div class="ui row">
+
+			<!--  First column -->
+			<div class="ui column">
+				  <h2>Status</h2>
+				  <div class="ui message">
+				    <p> ${user.statusText} </p>
+				  </div>
+				  <section class="ui form segment">
+				   		<form action="/profile/changestatus" method="POST">
+				      		<div class="field">
+				        		<textarea name="statusText"></textarea>
+				      		</div>
+				      		<button class="ui button teal submit labeled icon"><i class="icon edit"></i> Update </button>
+				    	</form>
+				  	</section>
+			</div>
+		
+			<!--  Second column -->
+			<div class="ui column">
+	   	 		<form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">     
+		      		<div class="ui field">
+		        		<input type="file" name="picture">  </input> 
+		     		</div>     
+		     		<button class="ui blue submit button"> Upload</button>       
+	    		</form>   
+	    		     
+	  			<div class="ui medium image">
+	    			<label class="ui ribbon label">Thumbnail Image</label>
+	    			<img src="/profile/getthumbnail/${user.id}">
+	  			</div>
+	  
+	    		<form action="/profile/uploadthumbnail/${user.id}" method="post" enctype="multipart/form-data">     
+	      			<div class="ui field">
+	       				 <input type="file" name="picture">  </input> 
+	     			</div>     
+	     			<button class="ui blue submit button"> Upload</button>       
+	    		</form>             
+			</div>
+			
+		</div>
+
+		<div class="row">
+	    	<div class="ui column">
+	      		#{include "components/friends.html" /} 
+	    	</div>
+	    	
+	    	<div class="column">
+	      		#{include "components/messages.html" /} 
+	   		</div>
+	  	</div>
+	  	</div>
+	</section>
+
+
+ 

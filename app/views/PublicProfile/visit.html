@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Public Profile Page' /}
+
+	<nav class="ui secondary pointing menu">
+		<a class="ui item" href="/home">Home</a>
+	 	<a class="ui active item" href="/members">Members</a>
+	  	<a class="ui item" href="/profile">Profile</a>
+	  	<div class="right menu">
+	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
+	  	</div>
+	 </nav>
+
+	<section class="ui left aligned container">
+		<h1 class="profile">${user.firstName} ${user.lastName}'s Profile</h1>
+		Current status: <em>${user.statusText}</em>
+      
+      	<section class="ui grid container">
+	    	<div class="row">
+      		#{include "components/profilesummary.html" /} 
+			#{include "components/comments.html" /} 
+			</div>
+		</section>
+    </section>
