@@ -11,14 +11,11 @@
 	  	</div>
 	</nav>
 
-<h1 class="ui inverted teal block header" >Blog  </h1>
-<section class="ui two column grid segment">
-  <div class="row">
-    <div class="ui column">
-      #{include "components/createpost.html" /} 
-    </div>
-    <div class="column">
-      #{include "components/displayposts.html" /} 
-    </div>
-  </div>
-</section>
+	<section class="ui left aligned container">
+		#{list items:user.posts.reverse(), as:'post'}
+		<h3> <a href="blog/${post.id}">${post.title}</a></h3>
+		    <p> 
+		      ${post.content}
+		    </p>
+		#{/list}
+	</section>

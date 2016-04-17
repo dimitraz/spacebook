@@ -13,7 +13,7 @@ public class Members extends Controller
   {
     User user = Accounts.getLoggedInUser();
     List<User> users = User.findAll();
-    // users.remove(user);
+    users.remove(user);
     render(users);
   }
   

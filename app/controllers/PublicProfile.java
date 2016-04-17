@@ -20,7 +20,7 @@ public class PublicProfile extends Controller
 
   public static void sendMessage(Long id, String messageText)
   {
-    User fromUser = Accounts.getLoggedInUser();;
+    User fromUser = Accounts.getLoggedInUser();
     User toUser = User.findById(id);
     
     Logger.info("Message from user " + 

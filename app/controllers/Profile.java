@@ -11,19 +11,17 @@ import models.*;
 
 public class Profile extends Controller
 {
-  public static void index()
-  {
-    User user = Accounts.getLoggedInUser();
-    render(user);
-  }
+	public static void index() {
+	  User user = Accounts.getLoggedInUser();
+	  render(user);
+	}
   
-  public static void changeStatus(String statusText)
-  {
-    User user = Accounts.getLoggedInUser();
-    user.statusText = statusText;
-    user.save();
-    Logger.info("Status changed to " + statusText);
-    index();
+  public static void changeStatus(String statusText) {
+	  User user = Accounts.getLoggedInUser();
+	  user.statusText = statusText;
+	  user.save();
+	  Logger.info("Status changed to " + statusText);
+	  index();
   }
   
 	public static void getPicture(Long id) {

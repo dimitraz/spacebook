@@ -1,10 +1,7 @@
-<section class="ui stacked segment">
-  <h4 class="ui inverted blue block header">Published Posts</h4>
-  #{list items:user.posts.reverse(), as:'post'}
-    <h5 class="ui inverted green block header"> ${post.title}</h5>
-    <p> 
-      ${post.content}:
+#{list items:user.posts.reverse(), as:'post'}
+<h3> <a href="${post.id}">${post.title}</a></h3>
+    <p> s
+      ${post.content}
     </p>
-        <a href="/blog/deletepost/${post.id}" class="ui button red labeled icon"><i class="icon delete"></i> Delete </a>
-        #{/list}
-</section> 
+	<!--a href="/blog/deletepost/${post.id}" class="ui button red labeled icon"><i class="icon delete"></i> Delete </a> -->
+#{/list}

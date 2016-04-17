@@ -14,8 +14,7 @@ public class Message extends Model
   @ManyToOne
   public User to;
 
-  public Message(User from, User to, String messageText)
-  {
+  public Message(User from, User to, String messageText) {
     this.from = from;
     this.to = to;
     this.messageText = messageText;

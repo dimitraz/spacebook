@@ -9,8 +9,7 @@ import models.*;
 
 public class Home extends Controller
 {
-  public static void index()
-  {
+  public static void index() {
     User user = Accounts.getLoggedInUser();
     render(user);
   }
