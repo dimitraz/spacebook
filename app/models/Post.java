@@ -1,6 +1,6 @@
 package models;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;

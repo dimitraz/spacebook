@@ -1,10 +1,12 @@
-<section class="ui form segment">
-  <h4 class="ui inverted blue block header">Create a Post</h4>
-  <form action="/blog/newpost" method="POST">
-    <div class="field">
-      <input type="text" name="title" placeholder="Title"></input>    
-      <textarea name="content" placeholder="Content"></textarea>
-    </div>
-    <button class="ui button teal submit labeled icon"><i class="icon edit"></i> Create </button>
-  </form>
+<h1>New post</h1>
+<div class="ui divider"></div>
+
+<section class="ui form">
+	<form class="new-post" action="/blog/newpost" method="POST">
+		<div class="field">
+	    	<input type="text" name="title" placeholder="Blog Title"></input>
+	    	<textarea name="content" placeholder="Post Content"></textarea>
+	    	<button class="ui fluid bottom attached button submit"><i class="icon write"></i>Create </button>
+	    </div>
+	</form>
 </section>

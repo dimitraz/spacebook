@@ -5,72 +5,58 @@
 		<a class="ui active item" href="/home">Home</a>
 	 	<a class="ui item" href="/members">Members</a>
 	  	<a class="ui item" href="/profile">Profile</a>
+	  	<a class="ui item" href="/blog">Blog</a>
 	  	<div class="right menu">
 	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
 	  	</div>
 	</nav>
-
-	<section class="ui left aligned container">
-		<h1>
-		 	Welcome, <a href="/profile">${user.firstName} ${user.lastName}</a>
-		</h1>
-		
-		<div class="ui divider"></div>
 	
-		<div class="ui two column grid container">
-	    <div class="ui row">
-
-			<!--  First column -->
-			<div class="ui column">
-				  <h2>Status</h2>
-				  <div class="ui message">
-				    <p> ${user.statusText} </p>
-				  </div>
-				  <section class="ui form segment">
-				   		<form action="/profile/changestatus" method="POST">
-				      		<div class="field">
-				        		<textarea name="statusText"></textarea>
-				      		</div>
-				      		<button class="ui button teal submit labeled icon"><i class="icon edit"></i> Update </button>
-				    	</form>
-				  	</section>
-			</div>
+	<section class="ui one column grid container"> 	
+		<!-- Display profile image -->	
 		
-			<!--  Second column -->
-			<div class="ui column">
-	   	 		<form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">     
-		      		<div class="ui field">
-		        		<input type="file" name="picture">  </input> 
-		     		</div>     
-		     		<button class="ui blue submit button"> Upload</button>       
-	    		</form>   
-	    		     
-	  			<div class="ui medium image">
-	    			<label class="ui ribbon label">Thumbnail Image</label>
-	    			<img src="/profile/getthumbnail/${user.id}">
-	  			</div>
-	  
-	    		<form action="/profile/uploadthumbnail/${user.id}" method="post" enctype="multipart/form-data">     
-	      			<div class="ui field">
-	       				 <input type="file" name="picture">  </input> 
-	     			</div>     
-	     			<button class="ui blue submit button"> Upload</button>       
-	    		</form>             
+		<!-- Modify profile image -->
+		<div class="ui center aligned column">
+			<div class="ui accordion">
+				<div class="title"><img class="ui centered medium circular image" src="/profile/getpicture/${user.id}"></div>
+				<div class="content">
+					<form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    	
+						<input type="file" name="picture" /> 
+						<input type="submit" name="submit" value="upload" />
+					</form>
+				</div>
+			</div>
+		</div> 	
+		
+		<!-- Status -->
+		<div class="ui center aligned column">
+			<h1 style="font-size: 48px;"> Welcome,  <a href="/profile" style="color: #ec644b">${user.firstName} ${user.lastName}</a></h1>
+			<p><em> ${user.statusText} </em></p>
+		</div>
+	</section>
+		
+		<section class="ui centered grid container">
+			<!-- Update Status 
+			<div class="ui column">				
+			<div class="ui accordion">
+				<div class="title"> <i class="write icon"></i>Update Status</div>
+				<div class="content">
+					<div class="ui form">
+						<form class="new-post" action="/profile/changestatus" method="POST">
+						<div class="field">
+							<input name="statusText" placeholder="Update Status">
+						</div>
+						<button class="ui button submit icon"><i class="icon edit"></i> Update </button>
+						</form>
+					</div>
+				</div>
+			</div>
+			</div> -->
+			<div class="ui five wide column">
+				#{include "components/messages.html" /}
 			</div>
 			
-		</div>
-
-		<div class="row">
-	    	<div class="ui column">
-	      		#{include "components/friends.html" /} 
-	    	</div>
-	    	
-	    	<div class="column">
-	      		#{include "components/messages.html" /} 
-	   		</div>
-	  	</div>
-	  	</div>
-	</section>
-
-
- 
+			<!-- Friends -->
+			<div class="ui five wide column">
+			 	#{include "components/friends.html" /}
+			</div>
+		</section>

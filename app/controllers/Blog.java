@@ -28,6 +28,9 @@ public class Blog  extends Controller {
 		  User user = Accounts.getLoggedInUser();
 		  Post post = new Post (title, content);
 		  
+		  //LocalDate dateNow = LocalDate.now();
+		  //post.date = dateNow;
+		  
 		  post.save();
 		  user.posts.add(post);
 		  user.save();
@@ -47,5 +50,5 @@ public class Blog  extends Controller {
 		
 		  index();
 	  }
-  
+	   
 }

@@ -1,11 +1,10 @@
-<section class="ui stacked segment">
-  <h4 class="ui inverted blue block header">Messages</h4>
+<h2>Messages (${user.inbox.size()})</h2>
+
   #{if user.inbox.size() > 0}
     <table class="ui table segment">
       <thead>
         <tr>
           <th>From</th>
-          <th></th>
           <th>Message</th>
         </tr>
       </thead>
@@ -13,13 +12,9 @@
         #{list items:user.inbox, as:'message'}
           <tr>
             <td>
-              <div class="ui small image">
-                <img src="/profile/getpicture/${message.from.id}">
-              </div>
+                <img class="ui avatar image" src="/profile/getpicture/${message.from.id}">
+                <span><a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a></span>
             </td>
-            <td>
-               <a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a>
-             </td>
              <td> 
                 ${message.messageText}
               </td>
@@ -28,4 +23,4 @@
       </tbody>
     </table>  
   #{/if} 
-</section>
+

@@ -30,8 +30,5 @@ public class PostPage extends Controller {
 		  Logger.info("Blah " + comment + currentPost.comments);
 		  index(id, postid);
 	  }
-	  
-	  
-	
-	
+
 }

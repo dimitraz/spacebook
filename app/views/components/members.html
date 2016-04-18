@@ -6,7 +6,8 @@
 		</div>
 		<div class="content">
 			<a href="/publicprofile/${user.id}"><h3><span class="${user.loggedIn}"> ${user.firstName} ${user.lastName}</span></h3></a> <br />
-			${user.statusText} 
+			${user.statusText} <br />
+			<a href="/${user.id}/blog">${user.firstName}'s blog</a>
 		</div>
 		<div class="ui bottom attached button">
 			<a href="/members/follow/${user.id}"><i class="add icon"></i>

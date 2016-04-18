@@ -1,13 +1,15 @@
+<section class="page">
 Comments: ${post.comments} <br />
-User: ${user.id}
 
-<section class="ui form segment">
-	<h4 class="ui inverted blue block header">Create a Post</h4>
-	<form action="/${user.id}/blog/${post.id}/newcomment" method="POST">
+<section class="ui page form">
+	<h2>Leave a comment</h2>
+	<div class="ui divider"></div>
+	<form class="new-post" action="/${user.id}/blog/${post.id}/newcomment" method="POST">
 	    <div class="field">
 	    	<input type="text" name="commentTitle" placeholder="Title"></input>    
 	      	<textarea name="commentContent" placeholder="Content"></textarea>
 	    </div>
-	    <button class="ui button teal submit labeled icon"><i class="icon edit"></i> Create </button>
+	    <button class="ui button compact submit icon"><i class="icon write"></i>Create</button>
   	</form>
+</section>
 </section>
