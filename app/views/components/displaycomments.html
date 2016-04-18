@@ -1,6 +1,11 @@
-#{list items:post.comments.reverse(), as:'comment'}
-<h3>${comment.commentTitle}</h3>
-    <p> 
-      ${comment.commentContent}
-    </p>
-#{/list}
+#{if post.comments.size() > 0}
+	<h3>Comments</h3>
+	<div class="ui divider"></div>
+	
+	#{list items:post.comments.reverse(), as:'comment'}
+	<h3>${comment.author}</h3>
+	    <p> 
+	      ${comment.content}
+	    </p>
+	#{/list}
+#{/if}

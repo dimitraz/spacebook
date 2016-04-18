@@ -26,8 +26,8 @@ public class PostPage extends Controller {
 		  comment.save();
 		  Post currentPost = Post.findById(postid);
 		  currentPost.newComment(comment);
-		  
-		  Logger.info("Blah " + comment + currentPost.comments);
+		  currentPost.save();
+		  // Logger.info("Blah " + comment + currentPost.comments);
 		  index(id, postid);
 	  }
 

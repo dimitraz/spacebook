@@ -1,11 +1,48 @@
 body, ui.button, .ui.text.container, .ui.input, .ui.form, .ui.menu, h5  { font-family: Inconsolata, 'Helvetica Neue'; }
-h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { font-family: 'Helvetica Neue';}
+h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { font-family: Karla, 'Helvetica Neue';}
 .ui.secondary.pointing.menu .item { padding: 1.5em; }
 .ui.container { padding-top: 2.5em; }
 .ui.menu { margin-bottom: 0; }
 .profile { margin-bottom: .25em; }
-.item { margin-bottom: 1.5em; }
-
-.true { color: #ff0; }
-
 .cover { width: 100%; height: 400px; overflow: hidden; }
+.item { margin-bottom: 1.5em; }
+.page { margin-top: 3em; }
+.true .circle { background: #66CC99; }
+.circle {
+    background: #D91E18;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+/* Post form */
+.ui.form .new-post input, .ui.form .new-post textarea, .ui.form .new-post button { 
+	-webkit-border-radius: 0;
+	border-radius: 0; 
+	box-shadow: none !important;
+	border: none;
+	background: #fff;  
+	font-size: 15px; 
+	font-family: Inconsolata; 
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.ui.form .new-post { margin-top: 2em;  }
+.ui.form .new-post button { text-align: left; }
+.ui.form .new-post input, .ui.form .new-post input:focus { 
+	font-size: 20px; 
+	-webkit-border-radius: 0;
+	border-radius: 0; 
+}
+
+
+/* Public Blog Page */
+.blog-item { padding: 3.3em 2.5em; border-bottom: 2px solid #000; }
+.blog-item a { color: #000; }
+.blog-item h1 { margin-top: 0; font-family: Karla; font-size: 30px;  }
+.blog-item h5 { font-weight: normal; }
+
+/* Blog Page */
+
+
