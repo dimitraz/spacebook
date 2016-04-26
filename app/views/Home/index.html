@@ -2,22 +2,27 @@
 #{set title:'Home' /}
 
 	<nav class="ui secondary pointing menu">
-		<a class="ui active item" href="/home">Home</a>
-	 	<a class="ui item" href="/members">Members</a>
-	  	<a class="ui item" href="/profile">Profile</a>
-	  	<a class="ui item" href="/blog">Blog</a>
+		<a class="ui home item" href="/home"><strong>Spacebook</strong></a>
 	  	<div class="right menu">
+		  	<a class="ui item" href="/members">Members</a>
+		  	<a class="ui item" href="/profile">Profile</a>
+		  	<a class="ui item" href="/blog">Blog</a>
 	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
 	  	</div>
 	</nav>
 	
-	<section class="ui one column grid container"> 	
-		<!-- Display profile image -->	
-		
+	<section class="welcome banner">
+	<section class="ui middle aligned grid container"> 	
+
+		<div class="ui row">
 		<!-- Modify profile image -->
-		<div class="ui center aligned column">
+		<div class="ui six wide column">
 			<div class="ui accordion">
-				<div class="title"><img class="ui centered medium circular image" src="/profile/getpicture/${user.id}"></div>
+				<div class="title">
+					<div class="profile-pic">
+						<img class="ui medium circular image" src="/profile/getpicture/${user.id}">
+					</div>
+				</div>
 				<div class="content">
 					<form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    	
 						<input type="file" name="picture" /> 
@@ -28,35 +33,79 @@
 		</div> 	
 		
 		<!-- Status -->
-		<div class="ui center aligned column">
-			<h1 style="font-size: 48px;"> Welcome,  <a href="/profile" style="color: #ec644b">${user.firstName} ${user.lastName}</a></h1>
+		<div class="ui eight wide middle aligned column">
+			<h1 class="title"> Welcome,  <a href="/profile">${user.firstName} ${user.lastName}</a></h1>
 			<p><em> ${user.statusText} </em></p>
 		</div>
+		</div>
 	</section>
-		
-		<section class="ui centered grid container">
-			<!-- Update Status 
-			<div class="ui column">				
+	</section>
+	
+	<section class="banner">
+	<section class="ui one column grid container">	
+		<div class="column">
+			<h1>&ldquo; ${user.statusText}</h1>
+		</div>
+		<div class="column">
+			<!-- Update Status -->
 			<div class="ui accordion">
-				<div class="title"> <i class="write icon"></i>Update Status</div>
+				<div class="title"><i class="write icon"></i>Update Status</div>
 				<div class="content">
 					<div class="ui form">
 						<form class="new-post" action="/profile/changestatus" method="POST">
-						<div class="field">
-							<input name="statusText" placeholder="Update Status">
-						</div>
-						<button class="ui button submit icon"><i class="icon edit"></i> Update </button>
+							<div class="field">
+								<input name="statusText" placeholder="Update Status">
+							</div>
+							<button class="ui button submit icon"><i class="icon edit"></i> Update </button>
 						</form>
 					</div>
 				</div>
 			</div>
-			</div> -->
-			<div class="ui five wide column">
-				#{include "components/messages.html" /}
-			</div>
-			
+		</div>
+	</section>
+	</section>
+	
+	<section class="cover banner" style="background: url(/profile/getthumbnail/${user.id});">
+	</section>
+	
+	<section style="background: white; color: black; border-bottom: 2px solid black;">	
+		<section class="ui centered grid container">	
 			<!-- Friends -->
-			<div class="ui five wide column">
+			<div class="ui eight wide column friends">
 			 	#{include "components/friends.html" /}
 			</div>
+			
+			<div class="ui eight wide column messages">
+				<div class="row" style="margin-bottom: 2em;">
+					<div class="ui two column grid">
+						<div class="column"> <h2>Latest Post</h2> </div>
+						<div class="ui right aligned column"> 
+							 <button class="ui basic button">
+							  <i class="icon external"></i> <a href="/${user.id}/blog">go to blog</a>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+				#{if user.posts.size() > 0}
+					#{list items:user.posts[user.posts.size() - 1], as:'post'}
+						<h3>${post.title}</h3>
+						<h5>${post.currentDate}</h5>
+			    		<p>${post.content}</p>
+			    	#{/list}
+			    #{/if}
+			    #{if user.posts.size() == 0}
+			    	<p>No posts to display.
+			    #{/if}
+			    </div>
+			</div>
 		</section>
+	</section>
+	
+	<section class="banner" style="background: #000; color: #fff; ">
+	<section class="ui one column grid container">	
+		#{include "components/messages.html" /}
+	</section>
+	</section>
+	
+	

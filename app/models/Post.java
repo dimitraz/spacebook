@@ -19,6 +19,7 @@ public class Post extends Model
 	public String title;
 	@Lob
 	public String content; 
+	public String currentDate;
 	
 	@OneToMany
 	public List<Comment> comments = new ArrayList<Comment>();

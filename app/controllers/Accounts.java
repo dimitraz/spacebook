@@ -20,7 +20,8 @@ public class Accounts extends Controller {
   }
 
   public static void index() {
-	  render();
+  	List<User> users = User.findAll();
+	render(users);
   }
 
   public static User getLoggedInUser() {

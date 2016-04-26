@@ -1,19 +1,22 @@
-<div class="ui five cards container">
+
+<div class="ui four column grid">
 	#{list items: users, as: 'user'}
-	<div class="card">
-		<div class="image">
+	<div class="ui center aligned column container" style="border-left: 2px solid #000;">
+		<div class="ui small circular image">
 			<img src="/profile/getpicture/${user.id}" /> 
 		</div>
 		<div class="content">
-			<a href="/publicprofile/${user.id}"><h3><span class="${user.loggedIn}"> ${user.firstName} ${user.lastName}</span></h3></a> <br />
+			<a href="/publicprofile/${user.id}">
+			<h3><div class="circle"></div> ${user.firstName} ${user.lastName}</h3>  
 			${user.statusText} <br />
 			<a href="/${user.id}/blog">${user.firstName}'s blog</a>
 		</div>
-		<div class="ui bottom attached button">
+		<div class="ui basic button">
 			<a href="/members/follow/${user.id}"><i class="add icon"></i>
 			Follow</a>
 		</div>
 	</div>
 		#{/list}
-</div> <!-- End Cards -->
+</div> 
+
 	

@@ -1,23 +1,39 @@
 <div class="ui ten wide right floated column">
 	<h2> New message </h2> 
-	
-    #{if user.inbox.size() > 0}
-    	#{list items:user.inbox, as:'message'}
-        <div class="content">
-        	<a class="author"> ${message.from.firstName} : </a>
-            <div class="text">
-            	${message.messageText}
-            </div>
-        </div>
-        #{/list}
-    #{/if}
-
-    <form action="/publicprofile/sendmessage/${user.id}" class="ui reply form" method="post">
+    <form action="/publicprofile/sendmessage/${user.id}" class="ui new-post reply form" method="post">
     	<div class="field">
         	<textarea name="messageText"></textarea>
       	</div>
-      	<button  class="ui fluid blue labeled submit icon button">
+      	<button  class="ui fluid submit icon button">
         	<i class="icon edit"></i> Add Reply
       	</button>
     </form>
+    
+    <section class="white">
+	    <h2>Messages</h2>
+		    #{if user.inbox.size() > 0}
+		    <table class="ui very basic invert table">
+		      <thead>
+		        <tr>
+		          <th>From</th>
+		          <th>Message</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        #{list items:user.inbox, as:'message'}
+		          <tr>
+		            <td>
+		                <img class="ui avatar image" src="/profile/getpicture/${message.from.id}">
+		                <span><a href="/publicprofile/${message.from.id}"> ${message.from.firstName}</a></span>
+		            </td>
+		             <td> 
+		                ${message.messageText}
+		              </td>
+		          </tr>
+		        #{/list}
+		      </tbody>
+		    </table>  
+		  	#{/if} 
+	</section>
 </div>
+

@@ -2,29 +2,31 @@
 #{set title:'Profile' /}
 
 	<nav class="ui secondary pointing menu">
-		<a class="ui item" href="/home">Home</a>
-	 	<a class="ui item" href="/members">Members</a>
-	  	<a class="ui active item" href="/profile">Profile</a>
-	  	<a class="ui item" href="/blog">Blog</a>
+		<a class="ui home item" href="/home"><strong>Spacebook</strong></a>
 	  	<div class="right menu">
+		  	<a class="ui item" href="/members">Members</a>
+		  	<a class="ui active item" href="/profile">Profile</a>
+		  	<a class="ui item" href="/blog">Blog</a>
 	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
 	  	</div>
 	</nav>
 
-    <div class="cover" style="background: url(/profile/getthumbnail/${user.id})">
+    <div class="banner cover" style="background: url(/profile/getthumbnail/${user.id})">
 	</div>
 
-	<section class="ui left aligned container">
-		<h1 class="profile">${user.firstName} ${user.lastName}</h1>
-		
-		<section class="ui grid container">
-	    	<div class="row">
-		  		<div class="ui four wide left floated column">
-				    #{include "components/profileimages.html" /} 
+	<section class="white">
+		<section class="ui left aligned container">
+			<h1 class="profile">${user.firstName} ${user.lastName}</h1>
+			
+			<section class="ui grid container">
+		    	<div class="row">
+			  		<div class="ui four wide left floated column">
+					    #{include "components/profileimages.html" /} 
+					</div>
+					<div class="ui ten wide right floated column">
+						#{include "components/statusupdate.html" /}   
+					</div>
 				</div>
-				<div class="ui ten wide right floated column">
-					#{include "components/statusupdate.html" /}   
-				</div>
-			</div>
+			</section>
 		</section>
 	</section>

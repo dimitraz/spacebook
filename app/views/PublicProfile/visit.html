@@ -2,23 +2,39 @@
 #{set title:'Public Profile Page' /}
 
 	<nav class="ui secondary pointing menu">
-		<a class="ui item" href="/home">Home</a>
-	 	<a class="ui active item" href="/members">Members</a>
-	  	<a class="ui item" href="/profile">Profile</a>
-	  	<a class="ui item" href="/blog">Blog</a>
+		<a class="ui home item" href="/home"><strong>Spacebook</strong></a>
 	  	<div class="right menu">
+		  	<a class="ui active item" href="/members">Members</a>
+		  	<a class="ui item" href="/profile">Profile</a>
+		  	<a class="ui item" href="/blog">Blog</a>
 	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
 	  	</div>
-	 </nav>
+	</nav>
 
-	<section class="ui left aligned container">
-		<h1 class="profile">${user.firstName} ${user.lastName}'s Profile</h1>
-		Current status: <em>${user.statusText}</em>
-      
+	<!-- Display cover image -->
+	#{if user.thumbnailPicture.exists()}
+	<div class="welcome banner cover" style="background: url(/profile/getthumbnail/${user.id})">
+	</div>
+	#{/if}
+	
+	#{if user.statusText != null}
+	<div class="banner">
+	<section class="ui one column grid container">	
+		<div class="column">
+			<h1 class="outline title">${user.firstName} ${user.lastName}'s <span>profile</span></h1>
+			${user.statusText}
+		</div>
+	</section>
+	</div>
+	#{/if}
+	
+	<section class="white" style="background: #000; color: #fff; ">
+	<section class="ui container">
       	<section class="ui grid container">
 	    	<div class="row">
       		#{include "components/profilesummary.html" /} 
 			#{include "components/comments.html" /} 
 			</div>
 		</section>
+    </section>
     </section>
