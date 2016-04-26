@@ -2,5 +2,10 @@
 <div class="ui divider"></div>
     <p> 
     	${post.content}
+    	
+    	 #{if user == currentUser}
+			<a href="/blog/deletepost/${post.id}" class="ui compact button"><i class="icon delete"></i> Delete </a>
+		 #{/if}
+    	
     </p>
 	

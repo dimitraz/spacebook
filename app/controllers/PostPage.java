@@ -18,9 +18,10 @@ import java.util.List;
 public class PostPage extends Controller {
 	
 	  public static void index(Long id, Long postid) {
+		  User currentUser = Accounts.getLoggedInUser();
 		  User user = User.findById(id);
 		  Post post = Post.findById(postid);
-		  render(post, user);
+		  render(post, user, currentUser);
 	  }
 	  
 	  public static void newComment(Long id, Long postid, String commentContent) {
