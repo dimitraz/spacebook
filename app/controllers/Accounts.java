@@ -15,6 +15,8 @@ public class Accounts extends Controller {
   }
 
   public static void logout() {
+	  User user = getLoggedInUser();
+	  user.loggedIn = false;
 	  session.clear();
 	  index();
   }
