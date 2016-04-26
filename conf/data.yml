@@ -4,33 +4,35 @@ User(lisa):
     lastName: Simpson
     email: lisa@simpson.com
     password: secret
+    statusText: "My interests include music, science, justice, animals, shapes, feelings."
     
 User(marge):
     firstName: Marge
     lastName: Simpson
     email: marge@simpson.com
     password: secret
+    statusText: "Why am I always so funny when no one's around?"
 
 User(homer):
     firstName: Homer
     lastName: Simpson
     email: homer@simpson.com
     password: secret
-    following: 
-              - marge
-              - lisa
+    statusText: 'Trying is the first step towards failure'
 
 User(bart):
     firstName: Bart
     lastName: Simpson
     email: bart@simpson.com
     password: secret
+    statusText: 'Eat my shorts'
 
 User(maggie):
     firstName: Maggie
     lastName: Simpson
     email: maggie@simpson.com
     password: secret
+    statusText:
     
 Message(message1):
     from : marge
@@ -40,4 +42,158 @@ Message(message1):
 Message(message2):
     from : lisa
     to   : homer
-    messageText: 'Get me outta here!'
+    messageText: "Dad, just for once don't you want to try something new?"
+
+Message(message3):
+    from : marge
+    to   : homer
+    messageText: "Sitting that close to the TV is bad for your health."
+
+Message(message4):
+    from : bart
+    to   : homer
+    messageText: "I'm done working. Working is for chumps."
+
+Message(message5):
+    from : homer
+    to   : lisa
+    messageText: "Well, I hope you've learnt your lesson, Lisa: never help anyone."
+
+Message(message6):
+    from : bart
+    to   : lisa
+    messageText: "Don't have a cow, sis"
+
+Message(message7):
+    from : marge
+    to   : bart
+    messageText: "If I don't fight him tomorrow, you kids will have a more violent future."
+
+Message(message8):
+    from : bart
+    to   : maggie
+    messageText: "D'Oh!"
+
+Message(message9):
+    from : lisa
+    to   : bart
+    messageText: 'What are you doing, Bart?'    
+
+Message(message10):
+    from : bart
+    to   : lisa
+    messageText: 'Eh, just passing the time.' 
+
+Message(message11):
+    from : bart
+    to   : marge
+    messageText: "Im troubled."        
+
+Friendship(friend1):
+    sourceUser: homer
+    targetUser: marge
+
+Friendship(friend2):
+    sourceUser: homer
+    targetUser: lisa
+
+Friendship(friend3):
+    sourceUser: homer
+    targetUser: bart
+
+Friendship(friend4):
+    sourceUser: marge
+    targetUser: homer
+
+Friendship(friend5):
+    sourceUser: marge
+    targetUser: lisa
+
+Friendship(friend6):
+    sourceUser: marge
+    targetUser: bart
+
+Friendship(friend7):
+    sourceUser: marge
+    targetUser: maggie
+
+Friendship(friend8):
+    sourceUser: lisa
+    targetUser: homer
+
+Friendship(friend9):
+    sourceUser: lisa
+    targetUser: marge
+
+Friendship(friend10):
+    sourceUser: lisa
+    targetUser: bart
+
+Friendship(friend11):
+    sourceUser: lisa
+    targetUser: maggie
+
+Friendship(friend12):
+    sourceUser: bart
+    targetUser: lisa
+
+Friendship(friend13):
+    sourceUser: maggie
+    targetUser: lisa
+
+Friendship(friend14):
+    sourceUser: maggie
+    targetUser: marge
+
+User(homer):
+    firstName: Homer
+    lastName: Simpson
+    email: homer@simpson.com
+    password: secret
+    statusText: 'Trying is the first step towards failure'
+    friendships:
+            - friend1
+            - friend2
+            - friend3
+
+User(marge):
+    firstName: Marge
+    lastName: Simpson
+    email: marge@simpson.com
+    password: secret
+    statusText: "Why am I always so funny when no one's around?"
+    friendships:
+            - friend4
+            - friend5
+            - friend6
+            - friend7
+
+User(lisa):
+    firstName: Lisa
+    lastName: Simpson
+    email: lisa@simpson.com
+    password: secret
+    statusText: "My interests include music, science, justice, animals, shapes, feelings."
+    friendships:
+            - friend8
+            - friend9
+            - friend10
+            - friend11    
+
+User(bart):
+    firstName: Bart
+    lastName: Simpson
+    email: bart@simpson.com
+    password: secret
+    statusText: 'Eat my shorts'
+    friendships:
+            - friend12
+
+User(maggie):
+    firstName: Maggie
+    lastName: Simpson
+    email: maggie@simpson.com
+    password: secret
+    friendships:
+            - friend13
+            - friend14

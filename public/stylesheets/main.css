@@ -1,26 +1,54 @@
-body { background: #000; color: #fff; }
-p { line-height: 1.6 !important; }
-body, ui.button, .ui.text.container, .ui.input, .ui.form, .ui.menu, h5  { -webkit-font-smoothing: antialiased; font-family: Inconsolata, 'Helvetica Neue'; }
-h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { font-family: Poppins, 'Helvetica Neue';}
-.ui.secondary.pointing.menu  { background: transparent; }
-.ui.secondary.pointing.menu .item, .ui.secondary.pointing.menu .active.item { padding: 1.5em; color: #fff; }
-.ui.secondary.pointing.menu .home.item { font-weight: bold; font-size: 15px; }
-.ui.secondary.pointing.menu .active.item { font-weight: bold; }
+/*
+	Theme Name: Spacebook
+	Description: Minimal, stark contrast Social Networking theme
+	Author: Dimitra Zuccarelli
+*/
 
-.ui.container { /* padding-top: 2.5em; */ }
-.ui.menu { margin-bottom: 0; }
-.profile { margin-bottom: .25em; }
-.cover { width: 100%; height: 400px; overflow: hidden; }
-.item { margin-bottom: 1.5em; }
-.page { margin-top: 3em; }
-.true .circle { background: #66CC99; }
-.circle {
-    background: #D91E18;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
+/*------------------------------------*/
+/*	Global		
+/*------------------------------------*/
+
+body { 
+	font-family: Inconsolata, 'Helvetica Neue';
+	-webkit-font-smoothing: antialiased; 
+	background: #000; 
+	color: #fff; 
 }
 
+p { 
+	line-height: 1.6 !important; 
+}
+
+body, ui.button, .ui.text.container, .ui.input, .ui.form, .ui.menu, h5  { 
+	font-family: Inconsolata, 'Helvetica Neue';
+	-webkit-font-smoothing: antialiased; 
+}
+
+h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { 
+	font-family: Poppins, 'Helvetica Neue';
+}
+
+/* Navigation Menu */
+.ui.secondary.pointing.menu  { 
+	background: transparent; 
+}
+.ui.menu .item, .ui.secondary.pointing.menu .item a {
+	color: #fff !important;
+}
+.ui.secondary.pointing.menu .item { 
+	padding: 1.5em; 
+}
+.ui.secondary.pointing.menu .home.item { 
+	font-weight: bold; 
+	font-size: 15px; 
+}
+.ui.secondary.pointing.menu .active.item { 
+	font-weight: bold; 
+	color: #fff;  
+}
+.ui.menu { 
+	margin-bottom: 0; 
+}
 
 /* Post form */
 .ui.form .new-post input, .ui.form .new-post textarea, .ui.form .new-post button { 
@@ -34,28 +62,20 @@ h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { fo
 	margin-left: 0;
 	padding-left: 0;
 }
-
-.ui.form .new-post { margin-top: 2em;  }
-.ui.form .new-post button { text-align: left; }
+.ui.form .new-post { 
+	margin-top: 2em; 
+}
+.ui.form .new-post button { 
+	text-align: left; 
+}
 .ui.form .new-post input, .ui.form .new-post input:focus { 
 	font-size: 20px; 
 	-webkit-border-radius: 0;
 	border-radius: 0; 
 }
 
-/* Public Blog Page */
-.blog-item { padding: 3.6em; border-bottom: 2px solid #000; width: 100%; }
-.blog-item a { color: #000; }
-
-.blog-item:nth-child(even) { background: #000; color: #fff; }
-.blog-item:nth-child(even) a { color: #fff; }
-
-.blog-item h1 { margin-top: 0; font-size: 30px;  }
-.blog-item h5 { font-weight: normal; }
-
-
 /*------------------------------------*/
-/*	Start Page		
+/*	Intro Page		
 /*------------------------------------*/
 
 .start {
@@ -86,7 +106,11 @@ h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { fo
 /*	Home Page		
 /*------------------------------------*/
 
-.profile-pic:hover { opacity: 0.6; }
+.cover { 
+	width: 100%; 
+	height: 480px; 
+	overflow: hidden; 
+}
 
 .banner {
 	background: white;
@@ -94,13 +118,6 @@ h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { fo
 	padding: 8em 0;
 	border-bottom: 2px solid black;
 }
-
-.welcome.banner {
-	min-height: 70%;
-}
-
-.cover-banner { height: 300px; }
-
 
 .banner h1 a { 
 	color: white;
@@ -115,6 +132,19 @@ h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header { fo
 	color: #fff;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+.welcome.banner {
+	min-height: 70%;
+}
+
+.profile-pic:hover {
+	opacity: 0.6; 
+}
+
+.profile { margin-bottom: .25em; }
+.item { margin-bottom: 1.5em; }
+.page { margin-top: 3em; }
+
 .messages {
 	padding: 6em 0 6em 4em !important;
 	border-left: 2px solid black;
@@ -128,7 +158,6 @@ h2 { margin-bottom: 1.5em; }
 
 
 	/* Messages */
-	
 	.ui.table, .ui.table thead th {
 		color: #fff;
 		border-color: #fff;
@@ -143,6 +172,15 @@ h2 { margin-bottom: 1.5em; }
 		color: #fff;
 		font-weight: bold;
 	}
+	
+	/* Cover */
+	.ui.accordion:not(.styled) .title~.content:not(.ui), .ui.accordion .title:not(.ui) {
+		padding: 0;
+	}	
+	.cover-upload {
+		margin-bottom: 1em;
+		padding: 2em;
+	}	
 	
 /*------------------------------------*/
 /*	Home Page		
@@ -168,3 +206,30 @@ h2 { margin-bottom: 1.5em; }
 		color: #000;
 		font-weight: bold;
 	}	
+	
+/*------------------------------------*/
+/*	Members		
+/*------------------------------------*/	
+	
+.circle {
+    background: #D91E18;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+.true .circle { 
+	background: #66CC99; 
+}	
+	
+/*------------------------------------*/
+/*	Public Blog		
+/*------------------------------------*/
+
+.blog-item { padding: 3.6em; border-bottom: 2px solid #000; width: 100%; }
+.blog-item a { color: #000; }
+
+.blog-item:nth-child(even) { background: #000; color: #fff; }
+.blog-item:nth-child(even) a { color: #fff; }
+
+.blog-item h1 { margin-top: 0; font-size: 30px;  }
+.blog-item h5 { font-weight: normal; }
