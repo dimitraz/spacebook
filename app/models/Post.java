@@ -1,6 +1,8 @@
 package models;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -30,7 +32,12 @@ public class Post extends Model
 	}
 	
 	public void newComment(Comment comment) {
-	  	comments.add(comment);
+		if(Accounts.getLoggedInUser() != null) {
+		  	comments.add(comment);
+		}
+		else {
+			Accounts.index();
+		}
 	}
   
 	public String toString() {

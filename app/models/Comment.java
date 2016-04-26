@@ -6,20 +6,18 @@ import javax.persistence.ManyToOne;
 import play.db.jpa.Model;
 
 @Entity
-public class Comment extends Model
-{
-  public String author;
-  @Lob
-  public String content;
+public class Comment extends Model {
+	@ManyToOne
+	public User fromUser;
+	@Lob
+	public String content;
+	public String currentDate;
 
-  public Comment(String author, String content)
-  {
-    this.author = author;
-    this.content = content;
-  }
+	public Comment(String content) {
+		this.content = content;
+	}
 
-  public String toString()
-  {
-	  return  "Author name: " + author + "\n" + "Comment:\n" + content;
-  } 
+	public String toString() {
+	  return  "Author name: " + fromUser.firstName + "\n" + "Comment:\n" + content + "\n" + "Date: " + currentDate;
+	} 
 }

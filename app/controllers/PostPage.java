@@ -1,6 +1,8 @@
 package controllers;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.OneToMany;
@@ -21,14 +23,30 @@ public class PostPage extends Controller {
 		  render(post, user);
 	  }
 	  
-	  public static void newComment(Long id, Long postid, String commentTitle, String commentContent) {
-		  Comment comment = new Comment(commentTitle, commentContent);
-		  comment.save();
-		  Post currentPost = Post.findById(postid);
-		  currentPost.newComment(comment);
-		  currentPost.save();
-		  // Logger.info("Blah " + comment + currentPost.comments);
-		  index(id, postid);
+	  public static void newComment(Long id, Long postid, String commentContent) {
+		  if(Accounts.getLoggedInUser() != null) {
+			  Comment comment = new Comment(commentContent);
+			
+			  // Create Date
+			  SimpleDateFormat formatDate = new SimpleDateFormat("dd-MM-yyyy");
+			  Date now = new Date();
+			  comment.currentDate = formatDate.format(now);
+			  
+			  // Get User
+			  User currentUser = Accounts.getLoggedInUser();
+			  comment.fromUser = currentUser;
+			  comment.save();
+			  
+			  // Add and save comment to post
+			  Post currentPost = Post.findById(postid);
+			  currentPost.newComment(comment);
+			  currentPost.save();
+	
+			  index(id, postid);
+		  } 
+		  else {
+			  Accounts.index();
+		  }
 	  }
 
 }

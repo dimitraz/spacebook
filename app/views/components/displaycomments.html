@@ -3,9 +3,10 @@
 	<div class="ui divider"></div>
 	
 	#{list items:post.comments.reverse(), as:'comment'}
-	<h3>${comment.author}</h3>
+	<h3>${comment.fromUser.firstName}</h3>
 	    <p> 
-	      ${comment.content}
+	      ${comment.currentDate} <br />
+	      ${comment.content} 
 	    </p>
 	#{/list}
 #{/if}

@@ -12,7 +12,7 @@
 	</nav>
 
 	<!-- Display cover image -->
-	#{if user.thumbnailPicture.exists()}
+	#{if user.coverPicture.exists()}
 	<div class="welcome banner cover" style="background: url(/profile/getcover/${user.id})">
 	</div>
 	#{/if}
