@@ -20,7 +20,7 @@ public class User extends Model {
   public String password;
   public String statusText;
   public Blob   profilePicture;
-  public Blob   thumbnailPicture;
+  public Blob   coverPicture;
   public int    age;
   public String nationality;
   public boolean loggedIn;

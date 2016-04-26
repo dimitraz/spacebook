@@ -24,7 +24,7 @@
 					</div>
 				</div>
 				<div class="content">
-					<form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    	
+					<form action="/home/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    	
 						<input type="file" name="picture" /> 
 						<input type="submit" name="submit" value="upload" />
 					</form>
@@ -52,7 +52,7 @@
 				<div class="title"><i class="write icon"></i>Update Status</div>
 				<div class="content">
 					<div class="ui form">
-						<form class="new-post" action="/profile/changestatus" method="POST">
+						<form class="new-post" action="/home/changestatus" method="POST">
 							<div class="field">
 								<input name="statusText" placeholder="Update Status">
 							</div>
@@ -65,8 +65,20 @@
 	</section>
 	</section>
 	
-	<section class="cover banner" style="background: url(/profile/getthumbnail/${user.id});">
-	</section>
+	<div class="ui accordion">
+		<div class="title">
+			<section class="cover banner" style="background: url(/profile/getcover/${user.id});">
+			</section>
+		</div>
+		<div class="content">
+			<section class="cover-upload">
+				<form action="/home/uploadcover/${user.id}" method="post" enctype="multipart/form-data">    	
+					<input type="file" name="picture" /> 
+					<input type="submit" name="submit" value="upload" style="color: #000;" />
+				</form>
+			</section>
+		</div>
+	</div>
 	
 	<section style="background: white; color: black; border-bottom: 2px solid black;">	
 		<section class="ui centered grid container">	

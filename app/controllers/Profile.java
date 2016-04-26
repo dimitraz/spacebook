@@ -49,22 +49,19 @@ public class Profile extends Controller
     index();
   }  
   
-  public static void getThumbnail(Long id) 
-  {
-    User user = User.findById(id);
-    Blob picture = user.thumbnailPicture;
-    if (picture.exists())
-    {
-      response.setContentTypeIfNotSet(picture.type());
-      renderBinary(picture.get());
-    }
-  }
+  	public static void getCover(Long id) {
+  		User user = User.findById(id);
+  		Blob picture = user.coverPicture;
+  		if (picture.exists()) {
+  			response.setContentTypeIfNotSet(picture.type());
+  			renderBinary(picture.get());
+  		}
+  	}
 
-  public static void uploadThumbnail(Long id, Blob picture)
-  {
-    User user = User.findById(id);
-    user.thumbnailPicture = picture;
-    user.save();
-    index();
-  } 
+  	public static void uploadCover(Long id, Blob picture) {
+  		User user = User.findById(id);
+  		user.coverPicture = picture;
+  		user.save();
+  		index();
+  	} 
 }

@@ -2,15 +2,15 @@
 #{set title:'Edit Details' /}
 
 	<nav class="ui secondary pointing menu">
-		<a class="ui active item" href="/home">Home</a>
-	 	<a class="ui item" href="/members">Members</a>
-	  	<a class="ui item" href="/profile">Profile</a>
-	  	<a class="ui item" href="/blog">Blog</a>
+		<a class="ui home item" href="/home"><strong>Spacebook</strong></a>
 	  	<div class="right menu">
+		  	<a class="ui item" href="/members">Members</a>
+		  	<a class="ui item" href="/profile">Profile</a>
+		  	<a class="ui item" href="/blog">Blog</a>
+		  	<a class="ui active item" href="/editprofile">Account Settings</a>
 	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
 	  	</div>
 	</nav>
-	
 
 	<section class="ui left aligned container form">
 		<form class="new-post" action="/editprofile/change" method="POST">

@@ -16,6 +16,9 @@ POST   /register                                Accounts.register
 # Home page
 GET     /home                                   Home.index
 GET     /home/drop/{id}                         Home.drop
+POST    /home/changestatus                   	Home.changeStatus
+POST    /home/uploadpicture/{id}             	Home.uploadPicture
+POST    /home/uploadcover/{id}           		Home.uploadCover
 
 # Members page
 GET     /members                                Members.index
@@ -26,8 +29,8 @@ GET     /profile                                Profile.index
 POST    /profile/changestatus                   Profile.changeStatus
 POST    /profile/uploadpicture/{id}             Profile.uploadPicture
 GET     /profile/getpicture/{id}                Profile.getPicture
-POST    /profile/uploadthumbnail/{id}           Profile.uploadThumbnail
-GET     /profile/getthumbnail/{id}              Profile.getThumbnail
+POST    /profile/uploadcover/{id}           	Profile.uploadCover
+GET     /profile/getcover/{id}              	Profile.getCover
 
 # Edit Details page
 GET     /editprofile                            EditProfile.index
