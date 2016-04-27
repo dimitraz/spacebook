@@ -7,40 +7,48 @@
 		  	<a class="ui item" href="/members">Members</a>
 		  	<a class="ui item" href="/profile">Profile</a>
 		  	<a class="ui item" href="/blog">Blog</a>
-		  	<a class="ui active item" href="/editprofile">Account Settings</a>
+		  	<a class="ui active item" href="/editprofile"><i class="settings icon"></i></a>
 	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
 	  	</div>
 	</nav>
 
-	<section class="ui left aligned container form">
-		<form class="new-post" action="/editprofile/change" method="POST">
-		     <div class="two fields">
-		      <div class="field">
-		        <label>First Name</label>
-		        <input placeholder="First Name" type="text" name="firstName" value="${user.firstName}">
-		      </div>
-		      <div class="field">
-		        <label>Last Name</label>
-		        <input placeholder="Last Name" type="text" name="lastName" value="${user.lastName}">
-		      </div>
-		    </div>
-		    <div class="two fields">
-		      <div class="field">
-		        <label>Nationality</label>
-		        <input placeholder="Nationality" type="text" name="nationality" value="${user.nationality}">
-		      </div>
-		      <div class="field">
-		        <label>Age</label>
-		        <input placeholder="Age" type="text" name="age"value="${user.age}">
-		      </div>
-		    </div>    <div class="field">
-		      <label>Email</label>
-		      <input placeholder="Email" type="text" name="email" value="${user.email}">
-		    </div>
-		    <div class="field">
-		      <label>Password</label>
-		      <input type="password" name="password">
-		    </div>
-		    <button class="ui blue submit button">Submit</button>
-		 </form>
+	<section class="banner">
+		<div class="ui middle aligned grid container">
+			<h1 class="outline title">Edit <span>Profile</span></h1>
+		</div>	
+	</section>
+	
+	<section class="white">
+		<div class="ui left aligned container form">
+			<form class="new-post edit-profile" action="/editprofile/change" method="POST">
+			     <div class="two fields">
+			      <div class="field">
+			        <label>First Name</label>
+			        <input placeholder="First Name" type="text" name="firstName" value="${user.firstName}">
+			      </div>
+			      <div class="field">
+			        <label>Last Name</label>
+			        <input placeholder="Last Name" type="text" name="lastName" value="${user.lastName}">
+			      </div>
+			    </div>
+			    <div class="two fields">
+			      <div class="field">
+			        <label>Nationality</label>
+			        <input placeholder="Nationality" type="text" name="nationality" value="${user.nationality}">
+			      </div>
+			      <div class="field">
+			        <label>Age</label>
+			        <input placeholder="Age" type="text" name="age"value="${user.age}">
+			      </div>
+			    </div>    <div class="field">
+			      <label>Email</label>
+			      <input placeholder="Email" type="text" name="email" value="${user.email}">
+			    </div>
+			    <div class="field">
+			      <label>Password</label>
+			      <input type="password" name="password">
+			    </div>
+			    <button class="ui basic submit button">Submit</button>
+			 </form>
+		  </div>
 	  </section>

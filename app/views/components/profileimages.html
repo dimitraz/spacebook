@@ -1,38 +1,51 @@
-<div class="ui card">
-	<div class="image">
-		<img class="ui fluid image" src="/profile/getpicture/${user.id}">
-	</div>
-	<div class="content">
-		<strong>Email:</strong> ${user.email} <br />
-		<strong>Nationality:</strong> ${user.nationality} <br />
-		<strong>Age:</strong> ${user.age}
-	</div>
-</div>
+<section class="ui centered grid container">
+	<div class="row">
+	
+		<!-- Display Profile image -->
+		<div class="ui eight wide friends column" style="border-right: 2px solid white;">
+			<div class="image">
+				<img class="ui small circular image" src="/profile/getpicture/${user.id}">
+			</div>
+		</div>
 
-<div class="ui accordion">
-	<div class="title">
-		<i class="write icon"></i>
-		Change profile image
+		<!-- Edit -->
+		<div class="ui eight wide middle aligned left aligned messages column">
+			<strong>Email:</strong> ${user.email} <br />
+			<strong>Nationality:</strong> ${user.nationality} <br />
+			<strong>Age:</strong> ${user.age}<br /><br />
+			
+			<!-- First accordion -->
+			<div class="ui accordion" style="color: #fff">
+				<div class="title"style="color: #fff">
+					<i class="write icon"></i>
+					Change profile image
+				</div>
+				<div class="content">
+					<form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    
+						<input type="file" name="picture" /> 
+						<input type="submit" name="submit" value="upload" />
+					</form>
+				</div>
+			</div>
+			  
+			<!-- Second accordion -->
+			<div class="ui accordion" style="color: #fff">
+				<div class="title" style="color: #fff">
+					<i class="write icon"></i>
+					Change cover image
+				</div>
+				<div class="content">
+				    <form action="/profile/uploadcover/${user.id}" method="post" enctype="multipart/form-data">     
+				    	<div class="ui field">
+				        	<input type="file" name="picture">  </input> 
+				        	<input type="submit" name="submit" value="upload" />
+				     	</div>     
+				    </form>  
+				</div>           
+			</div>
+			
+			<i class="write icon"></i>
+			<a href="/editprofile">Edit Account details</a>
+		</div>
 	</div>
-	<div class="content">
-		<form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    
-			<input type="file" name="picture" /> 
-			<input type="submit" name="submit" value="upload" />
-		</form>
-	</div>
-</div>
-  
-<div class="ui accordion">
-	<div class="title">
-		<i class="write icon"></i>
-		Change cover image
-	</div>
-	<div class="content">
-	    <form action="/profile/uploadcover/${user.id}" method="post" enctype="multipart/form-data">     
-	    	<div class="ui field">
-	        	<input type="file" name="picture">  </input> 
-	        	<input type="submit" name="submit" value="upload" />
-	     	</div>     
-	    </form>  
-	</div>           
-</div>
+</section>

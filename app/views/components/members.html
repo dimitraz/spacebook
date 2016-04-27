@@ -1,22 +1,19 @@
-
-<div class="ui four column grid">
+<div class="ui four column grid members">
 	#{list items: users, as: 'user'}
-	<div class="ui center aligned column container" style="border-left: 2px solid #000;">
-		<div class="ui small circular image">
-			<img src="/profile/getpicture/${user.id}" /> 
-		</div>
-		<div class="content">
-			<a href="/publicprofile/${user.id}">
-			<h3><div class="circle"></div> ${user.firstName} ${user.lastName}</h3>  
-			${user.statusText} <br />
-			<a href="/${user.id}/blog">${user.firstName}'s blog</a>
-		</div>
-		<div class="ui basic button">
-			<a href="/members/follow/${user.id}"><i class="add icon"></i>
-			Follow</a>
-		</div>
+	<div class="ui center aligned column" style="border-bottom: 2px solid #000">
+		<a href="/publicprofile/${user.id}">
+			<div class="ui small circular image border-${user.loggedIn}">
+				<img src="/profile/getpicture/${user.id}" /> 
+			</div>
+		</a>
+		
+		<h3><a href="/publicprofile/${user.id}">${user.firstName} ${user.lastName}</a></h2>  
+		<p>${user.statusText}</p>
+		
+		<a href="/${user.id}/blog"><strong>${user.firstName}'s blog</strong></a> &mid;
+		<a href="/members/follow/${user.id}"><i class="add icon"></i><strong>Follow</strong></a>
 	</div>
-		#{/list}
+	#{/list}
 </div> 
 
 	

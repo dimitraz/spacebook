@@ -1,16 +1,4 @@
-<div class="ui ten wide right floated column">
-	<h2> New message </h2> 
-    <form action="/publicprofile/sendmessage/${user.id}" class="ui new-post reply form" method="post">
-    	<div class="field">
-        	<textarea name="messageText"></textarea>
-      	</div>
-      	<button  class="ui fluid submit icon button">
-        	<i class="icon edit"></i> Add Reply
-      	</button>
-    </form>
-    
-    <section class="white">
-	    <h2>Messages</h2>
+<h2>Messages</h2>
 		    #{if user.inbox.size() > 0}
 		    <table class="ui very basic invert table">
 		      <thead>
@@ -34,6 +22,4 @@
 		      </tbody>
 		    </table>  
 		  	#{/if} 
-	</section>
-</div>
 

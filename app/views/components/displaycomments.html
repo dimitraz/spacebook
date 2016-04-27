@@ -3,10 +3,20 @@
 	<div class="ui divider"></div>
 	
 	#{list items:post.comments.reverse(), as:'comment'}
-	<h3>${comment.fromUser.firstName}</h3>
-	    <p> 
-	      ${comment.currentDate} <br />
-	      ${comment.content} 
-	    </p>
+	<div class="ui grid">
+		<div class="row">
+			<div class="one wide column">
+				<img class="ui small circular image" src="/profile/getpicture/${comment.fromUser.id}">
+			</div>
+			<div class="fourteen wide column">
+				<h3>${comment.fromUser.firstName}</h3>
+				<p> 
+	      			<strong>${comment.currentDate}</strong> <br />
+	      			${comment.content} 
+	    		</p>
+			</div>
+		</div>
+	</div>
+	<div class="ui divider"></div>
 	#{/list}
 #{/if}

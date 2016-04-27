@@ -50,28 +50,73 @@ h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header {
 	margin-bottom: 0; 
 }
 
-/* Post form */
-.ui.form .new-post input, .ui.form .new-post textarea, .ui.form .new-post button { 
+
+/*------------------------------------*/
+/*	Forms		
+/*------------------------------------*/
+
+.ui.form .new-post input, .ui.form .new-post textarea, .ui.form .new-post button,
+.ui.form.profile-post input, .ui.form.profile-post textarea, .ui.form.profile-post button,
+.ui.form.account-post input, .ui.form.acount-post textarea, .ui.form.account-post button { 
 	-webkit-border-radius: 0;
 	border-radius: 0; 
 	box-shadow: none !important;
 	border: none;
-	background: #fff;  
 	font-size: 15px; 
 	font-family: Inconsolata; 
 	margin-left: 0;
 	padding-left: 0;
 }
-.ui.form .new-post { 
+
+.ui.form .new-post input, .ui.form .new-post textarea, .ui.form .new-post button {
+	background: #fff;
+}
+.ui.form.profile-post input, .ui.form.profile-post textarea, .ui.form.profile-post button,
+.ui.form.account-post input, .ui.form.account-post textarea, .ui.form.account-post button {
+	background: #000; 
+	color: #fff;
+}
+
+.ui.form .new-post, .ui.form.profile-post, .ui.form.account-post { 
 	margin-top: 2em; 
 }
-.ui.form .new-post button { 
+.ui.form .new-post button, .ui.form.profile-post button  { 
 	text-align: left; 
 }
-.ui.form .new-post input, .ui.form .new-post input:focus { 
+.ui.form .new-post input, .ui.form .new-post input:focus,
+.ui.form.profile-post input, .ui.form.profile-post input:focus,
+.ui.form.account-post input, .ui.form.account-post input:focus   { 
 	font-size: 20px; 
 	-webkit-border-radius: 0;
 	border-radius: 0; 
+}
+
+.ui.form.account-post label {
+	color: #fff;
+}
+.ui.form.account-post input:focus {
+	background: #000;
+	color: #fff;
+}
+.ui.form.account-post input {
+	border: 2px solid #fff;
+	padding-left: 1em;
+}
+
+.ui.basic.button:active, .ui.basic.buttons .button:active {
+	background: #fff !important;
+}
+
+/* Public profile */
+.edit-profile .field {
+	border-bottom: 2px solid #000;
+	padding: 1em 0;
+}
+.edit-profile .button:active {
+	background: #fff !important;
+}
+.ui.basic.button:active, .ui.basic.buttons .button:active {
+	background: #fff !important;
 }
 
 /*------------------------------------*/
@@ -111,14 +156,15 @@ h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header {
 	height: 480px; 
 	overflow: hidden; 
 }
-
 .banner {
 	background: white;
 	color: black;
 	padding: 8em 0;
 	border-bottom: 2px solid black;
 }
-
+.welcome.banner {
+	min-height: 70%;
+}
 .banner h1 a { 
 	color: white;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -127,14 +173,9 @@ h1, h2, h3, h4, .ui.card>.content>.header, .ui.cards>.card>.content>.header {
 .title {
 	font-size: 48px;
 }
-
 .outline.title span {
 	color: #fff;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.welcome.banner {
-	min-height: 70%;
 }
 
 .profile-pic:hover {
@@ -183,7 +224,7 @@ h2 { margin-bottom: 1.5em; }
 	}	
 	
 /*------------------------------------*/
-/*	Home Page		
+/*	Profile Page		
 /*------------------------------------*/
 
 .white {
@@ -191,26 +232,56 @@ h2 { margin-bottom: 1.5em; }
 	background: #fff;
 	color: #000;
 }
-
-	.ui.invert.table, .ui.invert.table thead th {
-		color: #000;
-		border-color: #000;
-		border-size: 2px;
-	}
-	
-	.ui.invert.table thead th {
-    	border-bottom: 2px solid #000;
-	}
-	
-	.ui.invert.table a {
-		color: #000;
-		font-weight: bold;
-	}	
+.ui.invert.table, .ui.invert.table thead th {
+	color: #000;
+	border-color: #000;
+	border-size: 2px;
+}
+.ui.invert.table thead th {
+   	border-bottom: 2px solid #000;
+}
+.ui.invert.table a {
+	color: #000;
+	font-weight: bold;
+}	
 	
 /*------------------------------------*/
 /*	Members		
 /*------------------------------------*/	
-	
+
+.members {
+	background: #fff;
+	color: #000;
+	border-top: 2px solid #000;
+	margin-top: 1em;
+}
+.members a {
+	color: #000;
+}
+.members a:hover {
+	color: #eee;
+}
+
+.members .column {
+	padding: 5em 4em 4em 4em !important;
+	border-right: 2px solid #000;
+}
+.members .column:nth-child(even) {
+	background: #000;
+	color: #fff;
+}
+.members .column:nth-child(even) a {
+	color: #fff;
+}
+.members .column:nth-child(even) a:hover {
+	color: #222;
+}
+.border-false {
+	border: 3px solid #D91E18; 
+}	
+.border-true {
+	border: 3px solid #66CC99; 
+}		
 .circle {
     background: #D91E18;
     width: 7px;
@@ -220,16 +291,32 @@ h2 { margin-bottom: 1.5em; }
 .true .circle { 
 	background: #66CC99; 
 }	
-	
+
 /*------------------------------------*/
 /*	Public Blog		
 /*------------------------------------*/
 
-.blog-item { padding: 3.6em; border-bottom: 2px solid #000; width: 100%; }
-.blog-item a { color: #000; }
+.blog-item { 
+	padding: 6em; 
+	border-bottom: 2px solid #000; 
+	width: 100%; 
+}
+.blog-item a { 
+	color: #fff; 
+}
 
-.blog-item:nth-child(even) { background: #000; color: #fff; }
-.blog-item:nth-child(even) a { color: #fff; }
+.blog-item:nth-child(even) { 
+	background: #fff; 
+	color: #000; 
+}
+.blog-item:nth-child(even) a { 
+	color: #000; 
+}
 
-.blog-item h1 { margin-top: 0; font-size: 30px;  }
-.blog-item h5 { font-weight: normal; }
+.blog-item h1 { 
+	margin-top: 0; 
+	font-size: 30px;  
+}
+.blog-item h5 { 
+	font-weight: normal; 
+}

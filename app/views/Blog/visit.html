@@ -2,23 +2,22 @@
 #{set title:'Blog' /}
 
 	<nav class="ui secondary pointing menu">
-		<a class="ui item" href="/home">Home</a>
-	 	<a class="ui item" href="/members">Members</a>
-	  	<a class="ui item" href="/profile">Profile</a>
-	  	<a class="ui active item" href="/blog">Blog</a>
+		<a class="ui home item" href="/home"><strong>Spacebook</strong></a>
 	  	<div class="right menu">
+		  	<a class="ui item" href="/members">Members</a>
+		  	<a class="ui item" href="/profile">Profile</a>
+		  	<a class="ui item" href="/blog">Blog</a>
+		  	<a class="ui item" href="/editprofile"><i class="settings icon"></i></a>
 	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
 	  	</div>
 	</nav>
 	
-	<section class="page">
-	<h1> ${user.firstName}'s blog </h1>
-	<div class="ui divider"></div>
-	
-		#{list items:user.posts.reverse(), as:'post'}
-		<div class="blog-item">
-			<h5>${post.currentDate}</h5>
-			<h1><a href="blog/${post.id}">${post.title}</a></h1>
-		</div>
-		#{/list}
+	<section class="banner">
+		<div class="ui middle aligned grid container">
+				<h1 class="outline title">${user.firstName}'s <span>Blog</span></h1>
+		</div>	
 	</section>
+	
+	#{include "components/publicblog.html" /}
+	
+	

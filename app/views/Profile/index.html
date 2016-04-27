@@ -7,27 +7,13 @@
 		  	<a class="ui item" href="/members">Members</a>
 		  	<a class="ui active item" href="/profile">Profile</a>
 		  	<a class="ui item" href="/blog">Blog</a>
-		  	<a class="ui item" href="/editprofile">Account Settings</a>
+		  	<a class="ui item" href="/editprofile"><i class="settings icon"></i></a>
 	  		<a class="ui item" href="/logout"><i class="external icon"></i> Logout </a>
 	  	</div>
 	</nav>
 
-    <div class="banner cover" style="background: url(/profile/getcover/${user.id})">
+    <div class="banner cover" style="background: url(/profile/getcover/${user.id}) center center; background-size: cover;">
 	</div>
 
-	<section class="white">
-		<section class="ui left aligned container">
-			<h1 class="profile">${user.firstName} ${user.lastName}</h1>
-			
-			<section class="ui grid container">
-		    	<div class="row">
-			  		<div class="ui four wide left floated column">
-					    #{include "components/profileimages.html" /} 
-					</div>
-					<div class="ui ten wide right floated column">
-						#{include "components/statusupdate.html" /}   
-					</div>
-				</div>
-			</section>
-		</section>
-	</section>
+	#{include "components/statusupdate.html" /} 
+	#{include "components/profileimages.html" /} 

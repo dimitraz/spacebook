@@ -1,15 +1,13 @@
 <h1>Manage Posts</h1>
 
-<section class="ui three column grid page">
-
 	#{list items:user.posts.reverse(), as:'post'}
-	<div class="column">
 	<h3>${post.title}</h3>
 	    <p>
 	      ${post.content}
 	    </p>
 	    
-		<a href="/blog/deletepost/${post.id}" class="ui compact button"><i class="icon delete"></i> Delete </a>
-	</div>
+		<a href="/blog/deletepost/${post.id}" class="ui compact basic button"><i class="icon delete"></i> Delete </a>
+		<div class="ui divider" style="margin: 30px 0;"></div>
 	#{/list}
-</section>
+	
+

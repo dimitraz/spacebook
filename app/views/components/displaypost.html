@@ -1,11 +1,18 @@
-<h1>${post.title}</h1>
-<div class="ui divider"></div>
-    <p> 
-    	${post.content}
-    	
-    	 #{if user == currentUser}
+<div class="ui grid">
+	<div class="ui twelve wide column">
+		<h1>${post.title}</h1>
+	</div>
+	
+	<!-- Never used 
+	<div class="ui four wide right aligned column">
+		#{if user == currentUser}
 			<a href="/blog/deletepost/${post.id}" class="ui compact button"><i class="icon delete"></i> Delete </a>
-		 #{/if}
-    	
-    </p>
+		#{/if}
+	</div>
+	-->
+	
+</div>
+
+<div class="ui divider"></div>
+<p> ${post.content} </p>
 	
