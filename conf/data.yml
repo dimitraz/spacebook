@@ -1,3 +1,37 @@
+Post(post1):
+    title: "Welcome to my blog!"
+    content: "Integer mattis sit amet velit ac congue. In eu gravida nunc. Etiam tortor urna, efficitur in tortor vel, ultrices elementum quam. Praesent ultrices justo luctus purus pharetra elementum. Morbi vitae erat magna. Sed vestibulum urna eu velit ornare, sed facilisis nisi ullamcorper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse faucibus velit nec ipsum semper malesuada. Vestibulum eu orci a mi placerat dignissim id eu nibh. Duis at dui augue."
+    currentDate: "27-04-2016" 
+
+Post(post2):
+    title: "Lisa Simpson"
+    content: "Integer mattis sit amet velit ac congue. In eu gravida nunc. Etiam tortor urna, efficitur in tortor vel, ultrices elementum quam. Praesent ultrices justo luctus purus pharetra elementum. Morbi vitae erat magna. Sed vestibulum urna eu velit ornare, sed facilisis nisi ullamcorper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse faucibus velit nec ipsum semper malesuada. Vestibulum eu orci a mi placerat dignissim id eu nibh. Duis at dui augue."
+    currentDate: "27-04-2016" 
+
+Post(post3):
+    title: "Notes"
+    content: "Sed porta tortor a nibh malesuada, vel volutpat massa blandit. Nulla iaculis imperdiet felis a rhoncus. Ut ante sem, hendrerit non purus ac, hendrerit condimentum nisl. Nulla convallis magna in metus vehicula tempor a a est. Vestibulum elit enim, interdum eget eros ut, dignissim euismod mauris. Nulla sit amet mi non metus fringilla sodales id at elit. Nullam nec lectus fringilla, hendrerit augue ut, tincidunt nibh."
+    currentDate: "27-04-2016" 
+
+Post(post4):
+    title: "Lorem Ipsum"
+    content: "Sed porta tortor a nibh malesuada, vel volutpat massa blandit. Nulla iaculis imperdiet felis a rhoncus. Ut ante sem, hendrerit non purus ac, hendrerit condimentum nisl. Nulla convallis magna in metus vehicula tempor a a est. Vestibulum elit enim, interdum eget eros ut, dignissim euismod mauris. Nulla sit amet mi non metus fringilla sodales id at elit. Nullam nec lectus fringilla, hendrerit augue ut, tincidunt nibh."
+    currentDate: "27-04-2016" 
+
+Post(post5):
+    title: "Marge's blog"
+    content: "Integer mattis sit amet velit ac congue. In eu gravida nunc. Etiam tortor urna, efficitur in tortor vel, ultrices elementum quam. Praesent ultrices justo luctus purus pharetra elementum. Morbi vitae erat magna. Sed vestibulum urna eu velit ornare, sed facilisis nisi ullamcorper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse faucibus velit nec ipsum semper malesuada. Vestibulum eu orci a mi placerat dignissim id eu nibh. Duis at dui augue."
+    currentDate: "27-04-2016" 
+
+Post(post6):
+    title: "Hmmm"
+    content: "Integer mattis sit amet velit ac congue. In eu gravida nunc. Etiam tortor urna, efficitur in tortor vel, ultrices elementum quam. Praesent ultrices justo luctus purus pharetra elementum. Morbi vitae erat magna. Sed vestibulum urna eu velit ornare, sed facilisis nisi ullamcorper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse faucibus velit nec ipsum semper malesuada. Vestibulum eu orci a mi placerat dignissim id eu nibh. Duis at dui augue."
+    currentDate: "27-04-2016" 
+
+Post(post7):
+    title: "I'm Bart Simpson, Who the Hell are You?"
+    content: "Integer mattis sit amet velit ac congue. In eu gravida nunc. Etiam tortor urna, efficitur in tortor vel, ultrices elementum quam. Praesent ultrices justo luctus purus pharetra elementum. Morbi vitae erat magna. Sed vestibulum urna eu velit ornare, sed facilisis nisi ullamcorper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse faucibus velit nec ipsum semper malesuada. Vestibulum eu orci a mi placerat dignissim id eu nibh. Duis at dui augue."
+    currentDate: "27-04-2016" 
 
 User(lisa):
     firstName: Lisa
@@ -5,6 +39,8 @@ User(lisa):
     email: lisa@simpson.com
     password: secret
     statusText: "My interests include music, science, justice, animals, shapes, feelings."
+    age: 8
+    nationality: Springfield
     
 User(marge):
     firstName: Marge
@@ -12,6 +48,8 @@ User(marge):
     email: marge@simpson.com
     password: secret
     statusText: "Why am I always so funny when no one's around?"
+    age: 34
+    nationality: Springfield
 
 User(homer):
     firstName: Homer
@@ -19,6 +57,8 @@ User(homer):
     email: homer@simpson.com
     password: secret
     statusText: 'Trying is the first step towards failure'
+    age: 38
+    nationality: Springfield
 
 User(bart):
     firstName: Bart
@@ -26,6 +66,8 @@ User(bart):
     email: bart@simpson.com
     password: secret
     statusText: 'Eat my shorts'
+    age: 10
+    nationality: Springfield
 
 User(maggie):
     firstName: Maggie
@@ -33,6 +75,8 @@ User(maggie):
     email: maggie@simpson.com
     password: secret
     statusText:
+    age: 3
+    nationality: Springfield
     
 Message(message1):
     from : marge
@@ -87,7 +131,7 @@ Message(message10):
 Message(message11):
     from : bart
     to   : marge
-    messageText: "Im troubled."        
+    messageText: "Im troubled."    
 
 Friendship(friend1):
     sourceUser: homer
@@ -151,10 +195,14 @@ User(homer):
     email: homer@simpson.com
     password: secret
     statusText: 'Trying is the first step towards failure'
+    age: 38
+    nationality: Springfield
     friendships:
             - friend1
             - friend2
             - friend3
+    posts:
+            - post1
 
 User(marge):
     firstName: Marge
@@ -162,11 +210,16 @@ User(marge):
     email: marge@simpson.com
     password: secret
     statusText: "Why am I always so funny when no one's around?"
+    age: 34
+    nationality: Springfield
     friendships:
             - friend4
             - friend5
             - friend6
             - friend7
+    posts:
+            - post5
+            - post6
 
 User(lisa):
     firstName: Lisa
@@ -174,11 +227,17 @@ User(lisa):
     email: lisa@simpson.com
     password: secret
     statusText: "My interests include music, science, justice, animals, shapes, feelings."
+    age: 8
+    nationality: Springfield
     friendships:
             - friend8
             - friend9
             - friend10
             - friend11    
+    posts:
+            - post2
+            - post3
+            - post4
 
 User(bart):
     firstName: Bart
@@ -186,14 +245,20 @@ User(bart):
     email: bart@simpson.com
     password: secret
     statusText: 'Eat my shorts'
+    age: 10
+    nationality: Springfield
     friendships:
             - friend12
+    posts:
+            - post7
 
 User(maggie):
     firstName: Maggie
     lastName: Simpson
     email: maggie@simpson.com
     password: secret
+    age: 3
+    nationality: Springfield
     friendships:
             - friend13
             - friend14
